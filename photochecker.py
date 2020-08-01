@@ -76,7 +76,7 @@ class MainForm:
         def parseListFile(self, filename):
                 try:
                         with open(filename, "rt") as f:
-                                fl = [re.findall('([0-9a-fA-F]{32})\s+(.+)', line)[0] for line in f]
+                                fl = [re.findall(r'([0-9a-fA-F]{32})\s+(.+)', line)[0] for line in f]
                                 fl.sort(key = lambda x : x[1])
                                 self.filelist = fl
                                 if len(self.filelist) == 0:
