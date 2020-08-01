@@ -122,8 +122,9 @@ class MainForm:
                 try:
                         if self.index >= 0:
                                 shutil.copyfile(self.filelist[self.index][1], 
-                                        self.textDlg(self.outdir + "/" + 
-                                        os.path.basename(self.filelist[self.index][1])))
+                                        self.outdir + "/" + 
+                                        os.path.basename(self.filelist[self.index][1]))
+                                self.textDlg(self.filelist[self.index][1])
                 except:
                        e = sys.exc_info()[0]
                        self.textDlg(e)
